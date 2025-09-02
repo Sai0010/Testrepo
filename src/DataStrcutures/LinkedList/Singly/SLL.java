@@ -62,6 +62,24 @@ public class SLL {
             temp.next=n;
         }
     }
+    void deleteATHead(){
+        if(head==null){
+            System.out.println("LinkedList is Empty");
+            return;
+        }
+        Node todelete=head;
+        head=head.next;
+        todelete=null;
+    }
+    void deleteBYValue(int val){
+        Node temp=head;
+        while (temp.next.data!=val){
+            temp=temp.next;
+        }
+        Node todelete=temp.next;
+        temp.next=temp.next.next;
+        todelete=null;
+    }
 
     void printll(){
         Node temp = head;
@@ -76,15 +94,17 @@ public class SLL {
 
 class Drivercode{
     public static void main(String[] args) {
-      SLL sll = new SLL();
-      sll.insertatHead(10);
-      sll.insertatHead(20);
-      sll.insertatHead(30);
-      sll.insertatHead(40);
-      sll.printll();
-      sll.insertatTail(100);
-      sll.printll();
-      sll.insertatPos(50,0);
-      sll.printll();
+        SLL sll = new SLL();
+        sll.insertatHead(10);
+        sll.insertatHead(20);
+        sll.insertatHead(30);
+        sll.insertatHead(40);
+        sll.printll();
+        sll.insertatTail(100);
+        sll.printll();
+        sll.insertatPos(50, 0);
+        sll.printll();
+        sll.deleteATHead();
+        sll.printll();
     }
 }
