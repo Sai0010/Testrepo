@@ -1,0 +1,19 @@
+package DataStructures.LinkedList.doubly;
+class Node{
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev= null;
+    }
+}
+public class DLL {
+    Node head;
+
+    DLL() {
+        head = null;
+    }
+}
