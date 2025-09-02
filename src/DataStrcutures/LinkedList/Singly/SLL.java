@@ -72,9 +72,17 @@ public class SLL {
         todelete=null;
     }
     void deleteBYValue(int val){
+        if(head==null) return;
+        if(head.data==val){
+            deleteATHead();
+            return;
+        }
         Node temp=head;
-        while (temp.next.data!=val){
+        while (temp.next!=null && temp.next.data!=val ){
             temp=temp.next;
+        }if(temp.next==null){
+            System.out.println("Value was not found to be deleted");
+            return;
         }
         Node todelete=temp.next;
         temp.next=temp.next.next;
@@ -105,6 +113,8 @@ class Drivercode{
         sll.insertatPos(50, 0);
         sll.printll();
         sll.deleteATHead();
+        sll.printll();
+        sll.deleteBYValue(50);
         sll.printll();
     }
 }
